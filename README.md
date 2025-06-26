@@ -156,7 +156,7 @@
 | `<leader>cf`   | C++ 格式化        | clang-format                   |
 | `<leader>b`    | Python 格式化     | Black                          |
 | **移动和编辑** |                   |                                |
-| `Alt+j/k`      | 移动行            | 上下移动当前行                 |
+| `Shift+j/k`      | 移动行            | 上下移动当前行                 |
 | `<leader>y`    | 复制到系统剪贴板  | 跨应用复制                     |
 | `<leader>p`    | 从系统剪贴板粘贴  | 跨应用粘贴                     |
 

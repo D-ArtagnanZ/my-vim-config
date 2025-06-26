@@ -220,7 +220,7 @@ let g:coc_global_extensions = [
     \ 'coc-git'
     \ ]
 
-" 使用 Tab 进行补全导航和代码片段 
+" 使用 Tab 进行补全导航和代码片段
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
@@ -439,10 +439,10 @@ nnoremap <leader>* :Rg <C-R><C-W><CR>
 " -----------------------------------------------------------------------------
 
 " 移动行
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
 
 " 复制到系统剪贴板
 vnoremap <leader>y "+y
