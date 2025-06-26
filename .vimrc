@@ -217,7 +217,8 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-pairs',
     \ 'coc-highlight',
-    \ 'coc-git'
+    \ 'coc-git',
+    \ 'coc-vimlsp'
     \ ]
 
 " 使用 Tab 进行补全导航和代码片段
@@ -544,9 +545,10 @@ nnoremap <leader>hh :GitGutterToggle<CR>
 " -----------------------------------------------------------------------------
 " 代码注释 (NERDCommenter)
 " -----------------------------------------------------------------------------
-
+" 设置注释
+map <leader>cc <Plug>NERDCommenterComment
 " 切换注释
-map <leader>cc <Plug>NERDCommenterToggle
+map <leader>c<space> <Plug>NERDCommenterToggle
 " 性感注释
 map <leader>cs <Plug>NERDCommenterSexy
 " 注释到行尾

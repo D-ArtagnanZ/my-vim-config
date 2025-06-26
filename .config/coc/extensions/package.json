@@ -10,6 +10,7 @@
     "coc-snippets": ">=3.4.7",
     "coc-git": ">=2.7.7",
     "coc-highlight": ">=2.0.4",
-    "coc-pyright": ">=1.1.400"
+    "coc-pyright": ">=1.1.400",
+    "coc-vimlsp": ">=0.13.1"
   }
 }
