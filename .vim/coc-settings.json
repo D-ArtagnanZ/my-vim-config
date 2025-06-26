@@ -1,0 +1,144 @@
+{
+    // 通用设置
+    "suggest.enablePreview": true,
+    "suggest.maxCompleteItemCount": 20,
+    "suggest.timeout": 5000,
+    "suggest.snippetIndicator": "►",
+    "suggest.triggerAfterInsertEnter": true,
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.noselect": false,
+    // 诊断设置
+    "diagnostic.enable": true,
+    "diagnostic.displayByAle": false,
+    "diagnostic.refreshOnInsertMode": false,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextPrefix": " ► ",
+    "diagnostic.errorSign": "✗",
+    "diagnostic.warningSign": "⚠",
+    "diagnostic.infoSign": "ℹ",
+    "diagnostic.hintSign": "➤",
+    // 代码格式化
+    "coc.preferences.formatOnSaveFiletypes": [
+        "python",
+        "cpp",
+        "c",
+        "json",
+        "javascript",
+        "typescript",
+        "html",
+        "css"
+    ],
+    // C/C++ 语言服务器 (clangd) 设置
+    "clangd.enabled": true,
+    "clangd.path": "clangd",
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=iwyu",
+        "--pch-storage=memory",
+        "--log=error",
+        "--pretty",
+        "--all-scopes-completion",
+        "--header-insertion-decorators",
+        "-j=4"
+    ],
+    "clangd.fallbackFlags": [
+        "-std=c++23",
+        "-Wall",
+        "-Wextra"
+    ],
+    "clangd.semanticHighlighting": true,
+    "clangd.checkUpdates": false,
+    // Python 语言服务器 (pyright) 设置
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "100"
+    ],
+    "python.sortImports.path": "isort",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "strict",
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.useLibraryCodeForTypes": true,
+    // 代码片段
+    "snippets.ultisnips.enable": true,
+    "snippets.snipmate.enable": false,
+    // Git 集成
+    "git.enableGutters": true,
+    "git.addGBlameToVirtualText": true,
+    "git.addGBlameToBufferVar": true,
+    // 文件类型关联
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "CMakeLists.txt",
+                "compile_commands.json",
+                ".git"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        }
+    },
+    // 悬浮提示
+    "hover.target": "float",
+    "hover.floatMaxWidth": 100,
+    "hover.autoHide": true,
+    // 签名帮助
+    "signature.enable": true,
+    "signature.target": "float",
+    "signature.preferShownAbove": true,
+    // 代码动作
+    "codeAction.showQuickfixesOnly": false,
+    // 列表设置
+    "list.indicator": "►",
+    "list.selectedSignText": "✓",
+    // 工作区设置
+    "workspace.ignoredFolders": [
+        "$HOME",
+        "$HOME/.cargo/**",
+        "$HOME/.rustup/**",
+        "/usr/local/**",
+        "/usr/include/**"
+    ],
+    // pairs 配置 - 禁用 C++ 文件中的尖括号自动配对
+    "pairs.enableCharacters": [
+        "(",
+        "[",
+        "{",
+        "\"",
+        "'",
+        "`"
+    ],
+    // C++ 特定配置
+    "[cpp]": {
+        "pairs.enableCharacters": [
+            "(",
+            "[",
+            "{",
+            "\"",
+            "'",
+            "`"
+        ]
+    },
+    "[c]": {
+        "pairs.enableCharacters": [
+            "(",
+            "[",
+            "{",
+            "\"",
+            "'",
+            "`"
+        ]
+    }
+}
