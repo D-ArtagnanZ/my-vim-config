@@ -293,11 +293,11 @@
 ### 📐 文本对齐 (Tabular)
 
 | 快捷键             | 功能       | 说明          |
-| ------------------ | ---------- | ------------- | ------------ | --- |
+| ------------------ | ---------- | ------------- |
 | `<leader>a=`       | 对齐等号   | Tabularize /= |
 | `<leader>a:`       | 对齐冒号   | Tabularize /: |
 | `<leader>a,`       | 对齐逗号   | Tabularize /, |
-| `<leader>a         | `          | 对齐管道符    | Tabularize / |     |
+| `<leader>a`        | 对齐管道符 | Tabularize /  |
 | `<leader>a<space>` | 自定义对齐 | Tabularize /  |
 
 ### 🔄 头文件/源文件切换 (a.vim)
