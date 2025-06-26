@@ -143,44 +143,57 @@
 
 ### 💻 代码编辑
 
-| 快捷键         | 功能              | 说明                           |
-| -------------- | ----------------- | ------------------------------ |
-| **智能补全**   |                   |                                |
-| `Tab`          | 下一个补全项/跳转 | 补全菜单导航或代码片段参数跳转 |
-| `Shift+Tab`    | 上一个补全项/跳转 | 补全菜单导航或代码片段参数跳转 |
-| `Enter`        | 确认补全          | 接受建议                       |
-| `Ctrl+Space`   | 触发补全          | 手动触发                       |
-| **代码操作**   |                   |                                |
-| `<leader>rn`   | 重命名符号        | LSP 重构                       |
-| `<leader>f`    | 格式化代码        | 格式化选中区域                 |
-| `<leader>cf`   | C++ 格式化        | clang-format                   |
-| `<leader>b`    | Python 格式化     | Black                          |
-| **移动和编辑** |                   |                                |
-| `Shift+j/k`      | 移动行            | 上下移动当前行                 |
-| `<leader>y`    | 复制到系统剪贴板  | 跨应用复制                     |
-| `<leader>p`    | 从系统剪贴板粘贴  | 跨应用粘贴                     |
+| 快捷键          | 功能              | 说明                           |
+| --------------- | ----------------- | ------------------------------ |
+| **智能补全**    |                   |                                |
+| `Tab`           | 下一个补全项/跳转 | 补全菜单导航或代码片段参数跳转 |
+| `Shift+Tab`     | 上一个补全项/跳转 | 补全菜单导航或代码片段参数跳转 |
+| `Enter`         | 确认补全          | 接受建议                       |
+| `Ctrl+Space`    | 触发补全          | 手动触发                       |
+| **代码操作**    |                   |                                |
+| `<leader>rn`    | 重命名符号        | LSP 重构                       |
+| `<leader>f`     | 格式化代码        | 格式化选中区域                 |
+| `<leader>cf`    | C++ 格式化        | clang-format                   |
+| `<leader>b`     | Python 格式化     | Black                          |
+| `<leader>ap`    | Python autopep8   | autopep8 格式化                |
+| `<leader>db`    | Python 插入断点   | 插入 breakpoint()              |
+| **移动和编辑**  |                   |                                |
+| `<S-j>`/`<S-k>` | 移动行            | 上下移动当前行                 |
+| `<leader>y`     | 复制到系统剪贴板  | 跨应用复制                     |
+| `<leader>p`     | 从系统剪贴板粘贴  | 跨应用粘贴                     |
+| `<leader>r`     | 查看寄存器        | 显示所有寄存器内容             |
+| `<leader>m`     | 查看标记          | 显示所有标记                   |
+| `<leader>sa`    | 选择全部          | 选中整个文件                   |
+| `<leader>id`    | 插入日期          | 插入当前日期                   |
+| `<leader>it`    | 插入时间          | 插入当前日期时间               |
+| `<leader>za`    | 切换折叠          | 打开/关闭当前折叠              |
+| `<leader>zc`    | 关闭折叠          | 关闭当前折叠                   |
+| `<leader>zo`    | 打开折叠          | 打开当前折叠                   |
+| `<leader>zR`    | 打开所有折叠      | 展开文件中所有折叠             |
+| `<leader>zM`    | 关闭所有折叠      | 折叠文件中所有可折叠内容       |
 
 ### 🚀 快速移动 (EasyMotion)
 
-| 快捷键              | 功能             | 说明                             |
-| ------------------- | ---------------- | -------------------------------- |
-| **字符跳转**        |                  |                                  |
-| `<leader><leader>`  | 单字符跳转       | 输入一个字符，跳转到屏幕任意位置 |
-| `<leader><leader>s` | 双字符跳转       | 输入两个字符进行精确跳转         |
-| `<leader><leader>f` | 向前搜索字符     | 向前搜索并跳转                   |
-| `<leader><leader>F` | 向后搜索字符     | 向后搜索并跳转                   |
-| **词/行跳转**       |                  |                                  |
-| `<leader><leader>w` | 跳转到词首       | 向前跳转到单词开头               |
-| `<leader><leader>W` | 跳转到词首(WORD) | 向前跳转到 WORD 开头             |
-| `<leader><leader>b` | 向后跳转词首     | 向后跳转到单词开头               |
-| `<leader><leader>e` | 跳转到词尾       | 向前跳转到单词结尾               |
-| `<leader><leader>j` | 向下跳转行       | 快速向下跳转到指定行             |
-| `<leader><leader>k` | 向上跳转行       | 快速向上跳转到指定行             |
-| `<leader><leader>L` | 跳转到任意行     | 显示所有行的标签                 |
-| **搜索跳转**        |                  |                                  |
-| `<leader><leader>/` | 搜索跳转         | 输入搜索词后跳转                 |
-| `<leader><leader>n` | 下一个匹配       | 跳转到下一个搜索匹配             |
-| `<leader><leader>N` | 上一个匹配       | 跳转到上一个搜索匹配             |
+| 快捷键              | 功能               | 说明                             |
+| ------------------- | ------------------ | -------------------------------- |
+| `<leader><leader>`  | 单字符跳转         | 输入一个字符，跳转到屏幕任意位置 |
+| `<leader><leader>s` | 双字符跳转         | 输入两个字符进行精确跳转         |
+| `<leader><leader>f` | 向前搜索字符       | 向前搜索并跳转                   |
+| `<leader><leader>F` | 向后搜索字符       | 向后搜索并跳转                   |
+| `<leader><leader>w` | 跳转到词首         | 向前跳转到单词开头               |
+| `<leader><leader>W` | 跳转到词首(WORD)   | 向前跳转到 WORD 开头             |
+| `<leader><leader>b` | 向后跳转词首       | 向后跳转到单词开头               |
+| `<leader><leader>B` | 向后跳转词首(WORD) | 向后跳转到 WORD 开头             |
+| `<leader><leader>e` | 跳转到词尾         | 向前跳转到单词结尾               |
+| `<leader><leader>E` | 跳转到词尾(WORD)   | 向前跳转到 WORD 结尾             |
+| `<leader><leader>j` | 向下跳转行         | 快速向下跳转到指定行             |
+| `<leader><leader>k` | 向上跳转行         | 快速向上跳转到指定行             |
+| `<leader><leader>L` | 跳转到任意行       | 显示所有行的标签                 |
+| `<leader><leader>l` | 行内向前跳转       | 当前行内                         |
+| `<leader><leader>h` | 行内向后跳转       | 当前行内                         |
+| `<leader><leader>/` | 搜索跳转           | 输入搜索词后跳转                 |
+| `<leader><leader>n` | 下一个匹配         | 跳转到下一个搜索匹配             |
+| `<leader><leader>N` | 上一个匹配         | 跳转到上一个搜索匹配             |
 
 ### 🐛 调试功能
 
@@ -205,6 +218,111 @@
 | `<leader>rv`   | 重载 vimrc   | 应用新配置      |
 | `<leader><CR>` | 清除搜索高亮 | 清除高亮        |
 | `F5`           | 编译运行     | C++/Python 程序 |
+
+### 🔍 文件/搜索/大纲
+
+| 快捷键         | 功能         | 说明        |
+| -------------- | ------------ | ----------- |
+| `<leader>e`    | 文件树       | NERDTree    |
+| `<leader>o`    | 代码大纲     | Tagbar      |
+| `<leader>ff`   | 文件搜索     | FZF         |
+| `<leader>fg`   | 全局搜索     | FZF Rg      |
+| `<leader>fb`   | 缓冲区搜索   | FZF Buffers |
+| `<leader>fh`   | 历史文件     | FZF History |
+| `<leader>ft`   | 标签搜索     | FZF Tags    |
+| `<leader>fl`   | 行搜索       | FZF Lines   |
+| `<leader><CR>` | 清除搜索高亮 |             |
+| `<leader>sr`   | 全文替换     | :%s/        |
+| `<leader>*`    | 搜索当前词   | FZF Rg      |
+| `//`           | 搜索选中文本 | 可视模式下  |
+
+### 🚀 快速移动 (EasyMotion)
+
+| 快捷键              | 功能               | 说明                             |
+| ------------------- | ------------------ | -------------------------------- |
+| `<leader><leader>`  | 单字符跳转         | 输入一个字符，跳转到屏幕任意位置 |
+| `<leader><leader>s` | 双字符跳转         | 输入两个字符进行精确跳转         |
+| `<leader><leader>f` | 向前搜索字符       | 向前搜索并跳转                   |
+| `<leader><leader>F` | 向后搜索字符       | 向后搜索并跳转                   |
+| `<leader><leader>w` | 跳转到词首         | 向前跳转到单词开头               |
+| `<leader><leader>W` | 跳转到词首(WORD)   | 向前跳转到 WORD 开头             |
+| `<leader><leader>b` | 向后跳转词首       | 向后跳转到单词开头               |
+| `<leader><leader>B` | 向后跳转词首(WORD) | 向后跳转到 WORD 开头             |
+| `<leader><leader>e` | 跳转到词尾         | 向前跳转到单词结尾               |
+| `<leader><leader>E` | 跳转到词尾(WORD)   | 向前跳转到 WORD 结尾             |
+| `<leader><leader>j` | 向下跳转行         | 快速向下跳转到指定行             |
+| `<leader><leader>k` | 向上跳转行         | 快速向上跳转到指定行             |
+| `<leader><leader>L` | 跳转到任意行       | 显示所有行的标签                 |
+| `<leader><leader>l` | 行内向前跳转       | 当前行内                         |
+| `<leader><leader>h` | 行内向后跳转       | 当前行内                         |
+| `<leader><leader>/` | 搜索跳转           | 输入搜索词后跳转                 |
+| `<leader><leader>n` | 下一个匹配         | 跳转到下一个搜索匹配             |
+| `<leader><leader>N` | 上一个匹配         | 跳转到上一个搜索匹配             |
+
+### 🐙 Git 操作 (Fugitive/GitGutter)
+
+| 快捷键       | 功能         | 说明      |
+| ------------ | ------------ | --------- |
+| `<leader>gs` | Git 状态     | Fugitive  |
+| `<leader>gc` | Git 提交     | Fugitive  |
+| `<leader>gp` | Git 推送     | Fugitive  |
+| `<leader>gl` | Git 拉取     | Fugitive  |
+| `<leader>gL` | Git 日志     | Fugitive  |
+| `<leader>gb` | Git 责任查看 | Fugitive  |
+| `<leader>gd` | Git 差异     | Fugitive  |
+| `]c`         | 下一个修改   | GitGutter |
+| `[c`         | 上一个修改   | GitGutter |
+| `<leader>hp` | 预览修改     | GitGutter |
+| `<leader>hs` | 暂存修改     | GitGutter |
+| `<leader>hu` | 撤销修改     | GitGutter |
+| `<leader>hh` | 切换高亮     | GitGutter |
+
+### 💬 代码注释 (NERDCommenter)
+
+| 快捷键       | 功能       | 说明                 |
+| ------------ | ---------- | -------------------- |
+| `<leader>cc` | 切换注释   | 选中行注释/取消注释  |
+| `<leader>cs` | 性感注释   | 多行注释格式         |
+| `<leader>c$` | 注释到行尾 | 从光标位置注释到行尾 |
+| `<leader>cu` | 取消注释   | 取消选中行的注释     |
+| `<leader>cm` | 最小注释   | 使用最少的注释符号   |
+| `<leader>cn` | 嵌套注释   | 使用嵌套注释         |
+| `<leader>cl` | 左对齐注释 | 注释符左对齐         |
+| `<leader>cb` | 两端对齐   | 注释符两端对齐       |
+
+### 📐 文本对齐 (Tabular)
+
+| 快捷键             | 功能       | 说明          |
+| ------------------ | ---------- | ------------- | ------------ | --- |
+| `<leader>a=`       | 对齐等号   | Tabularize /= |
+| `<leader>a:`       | 对齐冒号   | Tabularize /: |
+| `<leader>a,`       | 对齐逗号   | Tabularize /, |
+| `<leader>a         | `          | 对齐管道符    | Tabularize / |     |
+| `<leader>a<space>` | 自定义对齐 | Tabularize /  |
+
+### 🔄 头文件/源文件切换 (a.vim)
+
+| 快捷键       | 功能         | 说明                   |
+| ------------ | ------------ | ---------------------- |
+| `<leader>as` | 当前窗口切换 | .h/.cpp 文件切换       |
+| `<leader>av` | 垂直分割切换 | 新垂直窗口打开对应文件 |
+| `<leader>ah` | 水平分割切换 | 新水平窗口打开对应文件 |
+| `<leader>at` | 新标签页切换 | 新标签页打开对应文件   |
+
+### 📝 Markdown 预览
+
+| 快捷键       | 功能     | 说明                    |
+| ------------ | -------- | ----------------------- |
+| `<leader>mp` | 切换预览 | 开启/关闭 Markdown 预览 |
+| `<leader>ms` | 开始预览 | 启动 Markdown 预览      |
+| `<leader>mx` | 停止预览 | 关闭 Markdown 预览      |
+
+### ⚙️ 配置文件
+
+| 快捷键       | 功能       | 说明         |
+| ------------ | ---------- | ------------ |
+| `<leader>ev` | 编辑 vimrc | 快速修改配置 |
+| `<leader>rv` | 重载 vimrc | 应用新配置   |
 
 ---
 
