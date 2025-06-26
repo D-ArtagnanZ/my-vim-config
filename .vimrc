@@ -186,6 +186,14 @@ let g:AutoPairsMapSpace = 0  " 禁用空格键的特殊映射
 " 注意：coc-pairs 的尖括号配对已通过 coc-settings.json 配置
 " C++ 文件中已禁用 '<' 的自动配对
 
+" NERDCommenter 配置
+let g:NERDSpaceDelims = 1            " 注释符号后加空格
+let g:NERDCompactSexyComs = 1        " 使用紧凑的性感注释
+let g:NERDDefaultAlign = 'left'      " 左对齐注释
+let g:NERDCommentEmptyLines = 1      " 允许注释空行
+let g:NERDTrimTrailingWhitespace = 1 " 删除注释时清理行尾空格
+let g:NERDToggleCheckAllLines = 1    " 检查所有选中的行
+
 " EasyMotion 配置
 let g:EasyMotion_do_mapping = 0  " 禁用默认映射
 let g:EasyMotion_smartcase = 1   " 智能大小写
@@ -297,6 +305,9 @@ let g:pymode_options_max_line_length = 100
 let g:pymode_lint = 1
 let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
 let g:pymode_rope = 0  " 使用 CoC 代替 rope
+let g:pymode_virtualenv = 1  " 支持虚拟环境
+let g:pymode_breakpoint = 1  " 支持断点
+let g:pymode_breakpoint_bind = '<leader>db'  " 插入断点
 
 " Black 配置
 let g:black_linelength = 100
@@ -311,9 +322,9 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " 自定义调试快捷键
 nmap <leader>dd :call vimspector#Launch()<CR>
 nmap <leader>dx :call vimspector#Reset()<CR>
-nmap <leader>de :call vimspector#Eval()
-nmap <leader>dw :call vimspector#Watch()
-nmap <leader>do :call vimspector#ShowOutput()
+nmap <leader>de :call vimspector#Eval()<CR>
+nmap <leader>dw :call vimspector#Watch()<CR>
+nmap <leader>do :call vimspector#ShowOutput()<CR>
 
 " =============================================================================
 " 自定义快捷键映射
@@ -414,6 +425,15 @@ nnoremap <leader>fl :Lines<CR>
 " 清除搜索高亮
 nnoremap <leader><CR> :nohlsearch<CR>
 
+" 搜索和替换
+" 搜索当前选中的文本
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+" 在当前文件中替换
+nnoremap <leader>sr :%s/
+vnoremap <leader>sr :s/
+" 搜索当前光标下的单词
+nnoremap <leader>* :Rg <C-R><C-W><CR>
+
 " -----------------------------------------------------------------------------
 " 代码编辑
 " -----------------------------------------------------------------------------
@@ -428,6 +448,25 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
+
+" 快速访问寄存器
+nnoremap <leader>r :reg<CR>
+" 快速设置标记
+nnoremap <leader>m :marks<CR>
+
+" 选择全部
+nnoremap <leader>sa ggVG
+
+" 快速插入日期时间
+nnoremap <leader>id "=strftime('%Y-%m-%d')<CR>P
+nnoremap <leader>it "=strftime('%Y-%m-%d %H:%M:%S')<CR>P
+
+" 代码折叠
+nnoremap <leader>za za  " 切换折叠
+nnoremap <leader>zc zc  " 关闭折叠
+nnoremap <leader>zo zo  " 打开折叠
+nnoremap <leader>zR zR  " 打开所有折叠
+nnoremap <leader>zM zM  " 关闭所有折叠
 
 " -----------------------------------------------------------------------------
 " 快速移动 (EasyMotion)
@@ -465,6 +504,128 @@ map <leader><leader>N <Plug>(easymotion-prev)
 
 " 快速跳转到任意位置（两次空格）
 nmap <leader><leader> <Plug>(easymotion-overwin-f)
+
+" -----------------------------------------------------------------------------
+" Git 操作 (Fugitive)
+" -----------------------------------------------------------------------------
+
+" Git 状态
+nnoremap <leader>gs :Git<CR>
+" Git 提交
+nnoremap <leader>gc :Git commit<CR>
+" Git 推送
+nnoremap <leader>gp :Git push<CR>
+" Git 拉取
+nnoremap <leader>gl :Git pull<CR>
+" Git 日志
+nnoremap <leader>gL :Git log<CR>
+" Git 责任查看
+nnoremap <leader>gb :Git blame<CR>
+" Git 差异
+nnoremap <leader>gd :Gdiffsplit<CR>
+
+" -----------------------------------------------------------------------------
+" Git 修改标记 (GitGutter)
+" -----------------------------------------------------------------------------
+
+" 跳转到下一个修改
+nmap ]c <Plug>(GitGutterNextHunk)
+" 跳转到上一个修改
+nmap [c <Plug>(GitGutterPrevHunk)
+" 预览修改
+nmap <leader>hp <Plug>(GitGutterPreviewHunk)
+" 暂存修改
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+" 撤销修改
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
+" 切换修改高亮
+nnoremap <leader>hh :GitGutterToggle<CR>
+
+" -----------------------------------------------------------------------------
+" 代码注释 (NERDCommenter)
+" -----------------------------------------------------------------------------
+
+" 切换注释
+map <leader>cc <Plug>NERDCommenterToggle
+" 性感注释
+map <leader>cs <Plug>NERDCommenterSexy
+" 注释到行尾
+map <leader>c$ <Plug>NERDCommenterToEOL
+" 取消注释
+map <leader>cu <Plug>NERDCommenterUncomment
+" 最小注释
+map <leader>cm <Plug>NERDCommenterMinimal
+" 嵌套注释
+map <leader>cn <Plug>NERDCommenterNested
+" 对齐注释
+map <leader>cl <Plug>NERDCommenterAlignLeft
+map <leader>cb <Plug>NERDCommenterAlignBoth
+
+" -----------------------------------------------------------------------------
+" 文本对齐 (Tabular)
+" -----------------------------------------------------------------------------
+
+" 对齐等号
+nnoremap <leader>a= :Tabularize /=<CR>
+vnoremap <leader>a= :Tabularize /=<CR>
+" 对齐冒号
+nnoremap <leader>a: :Tabularize /:\zs<CR>
+vnoremap <leader>a: :Tabularize /:\zs<CR>
+" 对齐逗号
+nnoremap <leader>a, :Tabularize /,\zs<CR>
+vnoremap <leader>a, :Tabularize /,\zs<CR>
+" 对齐管道符
+nnoremap <leader>a<bar> :Tabularize /<bar><CR>
+vnoremap <leader>a<bar> :Tabularize /<bar><CR>
+" 自定义对齐
+nnoremap <leader>a<space> :Tabularize /
+vnoremap <leader>a<space> :Tabularize /
+
+" -----------------------------------------------------------------------------
+" 头文件/源文件切换 (a.vim)
+" -----------------------------------------------------------------------------
+
+" 在当前窗口切换
+nnoremap <leader>as :A<CR>
+" 在垂直分割窗口切换
+nnoremap <leader>av :AV<CR>
+" 在水平分割窗口切换
+nnoremap <leader>ah :AS<CR>
+" 在新标签页切换
+nnoremap <leader>at :AT<CR>
+
+" -----------------------------------------------------------------------------
+" Python 格式化 (autopep8)
+" -----------------------------------------------------------------------------
+
+" 格式化整个文件
+autocmd FileType python nnoremap <buffer> <leader>ap :Autopep8<CR>
+" 格式化选中区域
+autocmd FileType python vnoremap <buffer> <leader>ap :Autopep8<CR>
+
+" -----------------------------------------------------------------------------
+" Markdown 预览
+" -----------------------------------------------------------------------------
+
+" 启动/停止预览
+nmap <leader>mp <Plug>MarkdownPreviewToggle
+" 启动预览
+nmap <leader>ms <Plug>MarkdownPreview
+" 停止预览
+nmap <leader>mx <Plug>MarkdownPreviewStop
+
+" -----------------------------------------------------------------------------
+" 包围字符操作 (vim-surround)
+" -----------------------------------------------------------------------------
+
+" vim-surround 使用默认映射：
+" cs"' - 将双引号改为单引号
+" cs'<q> - 将单引号改为 <q> 标签
+" cst" - 将标签改为双引号
+" ds" - 删除双引号
+" ysiw] - 在单词周围添加方括号
+" yss) - 在整行周围添加圆括号
+" 在可视模式下，S + 字符可以添加包围
 
 " -----------------------------------------------------------------------------
 " 配置文件
